@@ -8,7 +8,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT), str(ROOT / 'tests')]
 MODULES = [
-    'test_native_desktop', 'test_native_timing', 'test_native_speed', 'test_native_bc', 'test_native_art', 'test_kitchen', 'test_spatial', 'test_service_mode',
+    'test_native_desktop', 'test_native_timing', 'test_native_speed', 'test_native_bc', 'test_native_rl', 'test_native_art', 'test_kitchen', 'test_spatial', 'test_service_mode',
     'test_map_definition', 'test_navigation_cache', 'test_shared_work',
     'test_split_kitchen', 'test_fire_spread', 'test_throw', 'test_throw_diagonals',
     'test_ground_assembly', 'test_direct_assembly', 'test_tableware',

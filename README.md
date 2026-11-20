@@ -3,10 +3,12 @@
 ## Native desktop and learning lab (fork additions)
 
 This fork adds offline Pygame desktop play, exact input recording/replay, a separate
-game-speed control, and a small behavioral-cloning experiment. The learning example
-is a fixed-map smoke test, not a completed RL, IRL or HA2/FCP implementation.
+game-speed control, and independent behavioral-cloning and reward-trained Q-learning
+experiments. These fixed-map smoke tests are not general-purpose game agents,
+IRL or HA2/FCP implementations.
 
-Start with **[the learning lab guide](experiments/native_bc/README.md)** for installation,
+Start with **[the BC guide](experiments/native_bc/README.md)** or
+**[the RL guide](experiments/native_rl/README.md)** for installation,
 training, checkpoint inference, results and limitations. Use `--speed 0.25` to give
 human players four times as much wall time. Original engine rules and source assets
 are retained, along with the upstream license and third-party notices.
@@ -19,6 +21,7 @@ python -m venv .venv
 python -m pip install -r requirements-learning.txt
 python -X utf8 native_play.py --hz 20 --speed 0.25
 python -X utf8 experiments/native_bc/play_agent.py --scripted-partner
+python -X utf8 experiments/native_rl/play_agent.py --scripted-partner
 ```
 
 The upstream README follows below. Its web/model workflow is separate from the
