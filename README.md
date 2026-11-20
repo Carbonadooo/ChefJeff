@@ -1,5 +1,31 @@
 # ChefJeff · Cooking with AI
 
+## Native desktop and learning lab (fork additions)
+
+This fork adds offline Pygame desktop play, exact input recording/replay, a separate
+game-speed control, and a small behavioral-cloning experiment. The learning example
+is a fixed-map smoke test, not a completed RL, IRL or HA2/FCP implementation.
+
+Start with **[the learning lab guide](experiments/native_bc/README.md)** for installation,
+training, checkpoint inference, results and limitations. Use `--speed 0.25` to give
+human players four times as much wall time. Original engine rules and source assets
+are retained, along with the upstream license and third-party notices.
+
+Quick start after cloning this fork (Python 3.10-3.12):
+
+```sh
+python -m venv .venv
+# Activate .venv using your shell, then:
+python -m pip install -r requirements-learning.txt
+python -X utf8 native_play.py --hz 20 --speed 0.25
+python -X utf8 experiments/native_bc/play_agent.py --scripted-partner
+```
+
+The upstream README follows below. Its web/model workflow is separate from the
+offline native entry points above.
+
+---
+
 English · [中文](README.zh-CN.md)
 
 > **Online access update (2026-10-30):** The original domain, `chefjeff.online`, is undergoing ICP filing in China and is temporarily unavailable during review. Play at **[China · Shanghai](https://chefjeff.belchingleo.online/)** or **[Overseas · Germany](https://global.belchingleo.online/)**.

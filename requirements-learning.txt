@@ -1,0 +1,2 @@
+-r requirements-native.txt
+numpy==2.2.6

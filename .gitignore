@@ -35,3 +35,28 @@ cocos-kitchen/settings/v2/packages/program.json
 **/shared-client.json
 **/data-server.json
 node_modules/
+# Native-only local environment and generated evidence
+.venv/
+native-recordings/
+native-test-results.txt
+native-focused-results.txt
+native-audit-results.json
+native-browser-results.txt
+native-core-results.txt
+native-level-results.json
+native-pristine-results.txt
+native-window-results.txt
+native-audit-batched-results.json
+
+# Native 1.1 CPU-only timing/art evidence
+native-timing-results.txt
+native-art-results.txt
+native-core-results-v1.1.txt
+native-round-results-v1.1.txt
+native-core-results-v1.1.1.txt
+
+# Learning runs and generated data stay local; reviewed checkpoints are explicit.
+runs/
+*.jsonl.gz
+*.npz
+*.mp4

@@ -1,0 +1,130 @@
+{
+  "scope": "Level 1, fixed scripted assembler partner, structured full-state observations and high-level legal actions. Offline virtual clock; not official Benchmark v3, pixel control, keyboard imitation, RL or IRL.",
+  "train_seeds": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "aggregation_seeds": [
+    [
+      20,
+      21
+    ],
+    [
+      22,
+      23
+    ]
+  ],
+  "validation_seeds": [
+    40,
+    41
+  ],
+  "test_seeds": [
+    100,
+    101,
+    102,
+    103
+  ],
+  "summary": {
+    "idle": {
+      "mean_score": -80.0,
+      "mean_served": 0.0,
+      "scores": [
+        -80,
+        -80,
+        -80,
+        -80
+      ],
+      "served": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "random": {
+      "mean_score": -80.5,
+      "mean_served": 0.0,
+      "scores": [
+        -82,
+        -80,
+        -80,
+        -80
+      ],
+      "served": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "priority": {
+      "mean_score": 450.0,
+      "mean_served": 9.0,
+      "scores": [
+        450,
+        450,
+        450,
+        450
+      ],
+      "served": [
+        9,
+        9,
+        9,
+        9
+      ]
+    },
+    "teacher": {
+      "mean_score": 500.0,
+      "mean_served": 10.0,
+      "scores": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "served": [
+        10,
+        10,
+        10,
+        10
+      ]
+    },
+    "learned": {
+      "mean_score": 500.0,
+      "mean_served": 10.0,
+      "scores": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "served": [
+        10,
+        10,
+        10,
+        10
+      ]
+    }
+  },
+  "python": "3.12.11 | packaged by conda-forge | (main, Jun  4 2025, 14:29:09) [MSC v.1943 64 bit (AMD64)]",
+  "numpy": "2.2.6",
+  "policy_sha256": "855f33bc875a042a950b3e2143e660a230fdaf066b34412f6ed88eddecb86915",
+  "selected_stage": 0,
+  "selected_model_training_samples": 3945,
+  "source": "Local offline smoke experiment on 2026-11-17; not a convergence or human-partner study.",
+  "recorded_replay": {
+    "verified": true,
+    "episode_id": "85e36c6517204eb880210a600d0cba66",
+    "boundaries_checked": 7202,
+    "engine_events_checked": 412,
+    "decisions_checked": 1800,
+    "tick": 3600,
+    "time": 180.0,
+    "score": 500,
+    "served": 10,
+    "state_sha256": "5852351ae1c9b6ea1914d256931e2887069bb31de252f1d703caaa5cca5830f8",
+    "end_reason": "round_complete"
+  }
+}
