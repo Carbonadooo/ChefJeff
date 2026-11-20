@@ -1,5 +1,8 @@
 """Reward, variable-duration TD targets and public-port Q policy regressions."""
 import json
+import os
+import subprocess
+import sys
 from pathlib import Path
 import tempfile
 import unittest
@@ -11,6 +14,21 @@ from experiments.native_rl.train import update, batch_update
 
 
 class NativeRLTests(unittest.TestCase):
+    def test_learning_clis_bootstrap_utf8_under_windows_locale_defaults(self):
+        root = Path(__file__).resolve().parents[1]
+        entries = ('native_rl/play_agent.py', 'native_rl/train.py',
+                   'native_bc/play_agent.py', 'native_bc/experiment.py')
+        environment = dict(os.environ, PYTHONUTF8='0', PYTHONDONTWRITEBYTECODE='1')
+        with tempfile.TemporaryDirectory() as unrelated_directory:
+            for entry in entries:
+                with self.subTest(entry=entry):
+                    process = subprocess.run(
+                        [sys.executable, '-X', 'utf8=0', str(root / 'experiments' / entry), '--help'],
+                        cwd=unrelated_directory, env=environment, capture_output=True,
+                        encoding='utf-8', errors='replace', timeout=30)
+                    self.assertEqual(process.returncode, 0, process.stderr)
+                    self.assertIn('usage:', process.stdout)
+
     def test_terminal_q_target_does_not_bootstrap_and_masks_unavailable_actions(self):
         policy = QPolicy()
         policy.values('next')[1] = 100

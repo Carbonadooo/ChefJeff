@@ -10,6 +10,16 @@ import time
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
+
+
+# Upstream catalogs use the locale-default text codec. Match native_play.py:
+# restart only this CLI process in UTF-8 mode before importing the game modules.
+if __name__ == '__main__' and not sys.flags.utf8_mode:
+    import subprocess
+    raise SystemExit(subprocess.call([
+        sys.executable, '-X', 'utf8', str(Path(__file__).resolve()), *sys.argv[1:]
+    ]))
+
 import numpy as np
 from experiments.native_rl.env import CookingEnv, rollout
 from experiments.native_rl.q_policy import QPolicy
